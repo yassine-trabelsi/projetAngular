@@ -14,7 +14,8 @@
           {{ residence.status }}
         </span>
       </p>
-
+      <!-- el / eli 9bal details bsh necrasiw el path lekdim /residence o directe nhotou /details/id--> 
+      <button class="btn-btn" [routerLink]="['/details',residence.id]">Voir Details</button>&nbsp; 
       <button (click)="showLocation(residence)">Show Location</button>
 &nbsp;
       <button (click)="toggleFavorite(residence)">
