@@ -5,6 +5,7 @@
     <img [src]="residence.image" alt="{{ residence.name }}" class="residence-image" />
     <p><strong>Adresse:</strong> {{ residence.address }}</p>
     <p><strong>Status:</strong> {{ residence.status }}</p>
+    <button class="btn btn-primary mt-3" (click)="nextResidence()">Next</button>
   </div>
   
   <ng-template #notFound>
