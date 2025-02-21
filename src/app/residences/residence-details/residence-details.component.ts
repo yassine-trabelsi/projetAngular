@@ -16,6 +16,7 @@ export class ResidenceDetailsComponent implements OnInit {
       { id: 3, name: "El Arij", address: "Rades", image: "../../assets/img/3.jpg", status: "Vendu" },
       { id: 4, name: "El Anber", address: "inconnu", image: "../../assets/img/4.jpg", status: "En Construction" }
     ];
+    //activatedRoute obligatoire ndéclaréha bsh nrécupéri id mel url
   constructor(private ar: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
