@@ -1,7 +1,7 @@
 <div class="container p-4 border rounded bg-light">
   <h2 class="text-center mb-4">Add New Apartment</h2>
 
-  <form [formGroup]="AddAppart" class="container p-4 border rounded bg-light">
+  <form [formGroup]="AddAppart" (ngSubmit)="onSubmit()" class="container p-4 border rounded bg-light">
 
     <div class="row mb-3">
       <label for="apartNum" class="col-sm-3 col-form-label">Apartment Number:</label>
@@ -77,15 +77,13 @@
 
     <div class="mb-3">
       <label for="residence" class="form-label">Residence:</label>
-      <select id="residence" class="form-select" formControlName="ResidenceId">
-        <option value="">Select a residence</option>
-      </select>
+      <input type="text" id="floorNum" class="form-control" formControlName="ResidenceId" />
     </div>
-    
+
     <div class="row">
       <div class="col text-center">
         <button type="submit" class="btn btn-primary me-2" [disabled]="AddAppart.invalid">Add</button>
-        <button type="button" class="btn btn-secondary">Reset</button>
+        <button type="button" class="btn btn-secondary" (click)="resetForm()">Reset</button>
       </div>
     </div>
   </form>
