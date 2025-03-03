@@ -3,5 +3,5 @@ export class Residence {
     name!: string;
     address!: string;
     image!: string;
-    status!: string
+    status!: string;
     }

@@ -63,4 +63,20 @@ export class ResidencesComponent {
       residence.address.toLowerCase().includes(lowerSearch)
     );
   }
+
+
+  deleteResidence(id: number): void {
+    if (confirm('Êtes-vous sûr de vouloir supprimer cette résidence ?')) {
+      this.residenceService.deleteResidence(id).subscribe(
+        () => {
+          this.listResidences = this.listResidences.filter(residence => residence.id !== id);
+          alert('Résidence supprimée avec succès');
+          location.reload();
+        },
+        (error) => {
+          console.error('Erreur lors de la suppression de la résidence', error);
+        }
+      );
+    }
+  }
 }

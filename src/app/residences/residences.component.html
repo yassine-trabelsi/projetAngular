@@ -23,6 +23,8 @@
       <button (click)="toggleFavorite(residence)">
         <i [ngClass]="isFavorite(residence) ? 'fas fa-heart liked' : 'far fa-heart'"></i> Like
       </button>
+      &nbsp;
+      <button (click)="deleteResidence(residence.id)">Delete</button>
     </div>
   </div>
 </div>

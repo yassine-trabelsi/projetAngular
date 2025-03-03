@@ -18,4 +18,8 @@ export class ResidenceService {
   addResidence(residence: Residence){
     return this.http.post(this.residenceUrl, residence);
   }
+
+  deleteResidence(id: number){
+    return this.http.delete(`${this.residenceUrl}/${id}`);
+  }
 }
