@@ -5,13 +5,15 @@ import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ResidenceDetailsComponent } from './residences/residence-details/residence-details.component';
 import { AddAppartmentComponent } from './Appartment/add-appartment/add-appartment.component';
+import { AddResidenceComponent } from './residences/add-residence/add-residence.component';
 
 const routes: Routes = [
-  {path:'',redirectTo:'/home',pathMatch:'full'},
+  {path:'',redirectTo:'/residence',pathMatch:'full'},
   {path:'residence',component:ResidencesComponent},
   {path:'home',component:HomeComponent},
-  {path:'details/:id',component:ResidenceDetailsComponent}, 
-  {path:'addAppart',component:AddAppartmentComponent}, 
+  {path:'details/:id',component:ResidenceDetailsComponent},
+  {path:'addAppart',component:AddAppartmentComponent},
+  { path: "addRes", component: AddResidenceComponent },
   //dima path notfound ekher haja fel liste
   {path:'**',component:NotFoundComponent}
 ];
