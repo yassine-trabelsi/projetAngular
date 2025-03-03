@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Residence } from 'src/core/models/Residence';
+import { ResidenceService } from 'src/core/services/residence.service';
 
 @Component({
   selector: 'app-residences',
@@ -8,16 +9,20 @@ import { Residence } from 'src/core/models/Residence';
 })
 export class ResidencesComponent {
   listResidences: Residence[] = [
-    { id: 1, name: "El fel", address: "Borj Cedria", image: "../../assets/img/1.jpg", status: "Disponible" },
-    { id: 2, name: "El yasmine", address: "Ezzahra", image: "../../assets/img/2.jpg", status: "Disponible" },
-    { id: 3, name: "El Arij", address: "Rades", image: "../../assets/img/3.jpg", status: "Vendu" },
-    { id: 4, name: "El Anber", address: "inconnu", image: "../../assets/img/4.jpg", status: "En Construction" }
   ];
+  constructor(private residenceService: ResidenceService) {}
+
+  ngOnInit() {
+    this.residenceService.getresidences().subscribe(data => {
+      this.listResidences = data;
+      this.filteredResidences = [...this.listResidences];
+    });
+  }
 
   favoriteResidences: Residence[] = [];
   searchText: string = "";
   filteredResidences: Residence[] = [...this.listResidences];
-  
+
   showLocation(residence: Residence): void {
     if (residence.address.toLowerCase() === "inconnu") {
       alert(`L'adresse de la résidence "${residence.name}" est inconnue.`);

@@ -7,6 +7,9 @@ import { Appartment } from 'src/core/models/Appartment';
   templateUrl: './add-appartment.component.html',
   styleUrls: ['./add-appartment.component.css']
 })
+
+// ki nzid haja f constructeur tetsama injection de dépendance
+
 export class AddAppartmentComponent {
   newApart!: Appartment;
 
